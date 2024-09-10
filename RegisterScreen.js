@@ -5,6 +5,8 @@ import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image } from 'reac
 import { FontAwesome } from '@expo/vector-icons';
 
 const RegistrationScreen = ({ navigation }) => {
+  const [Name, setName] = useState('');
+  const [PhoneNumber, setPhoneNumber] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,6 +27,28 @@ const RegistrationScreen = ({ navigation }) => {
         />
       </View>
       <Text style={styles.title}>Register</Text>
+
+      <View style={styles.inputContainer}>
+        <FontAwesome name="Name" size={20} color="#4C7766" style={styles.icon} />
+        <TextInput
+          style={styles.input}
+          placeholder="Name"
+          placeholderTextColor="#aeaead"
+          value={Name}
+          onChangeText={setName}
+        />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <FontAwesome name="PhoneNumber" size={20} color="#4C7766" style={styles.icon} />
+        <TextInput
+          style={styles.input}
+          placeholder="PhoneNumber"
+          placeholderTextColor="#aeaead"
+          value={{PhoneNumber}}
+          onChangeText={setPhoneNumber}
+        />
+      </View>
 
       <View style={styles.inputContainer}>
         <FontAwesome name="user" size={20} color="#4C7766" style={styles.icon} />
